@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+
+<!--I tried to impliment Jinja's multiple inheritance syntax in place of my 
+    title tag listed below these comments, like so:
+
+
+    {% extends 'base.html' %}
+    {% block title %}Application Form{% endblock %}
+
+    However, whenever I would include the above code, my site would break,
+    meaning the page "application-form.html" would be blank.-->
+
+    <title>Skills-HTML-CSS</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Application Form</h1>
+    <p>Please type your first name, last name, salary requirements, and choose the job for which you are applying.</p><br>
+    <form action="/application" method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="user_firstname">
+        <br>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="user_lastname">
+        <br>
+        <label for="salary">Salary Requirement:</label>
+        <input type="number" id="salary" name="user_salary">
+        <br>
+        <fieldset>
+            <legend>For which job are you applying?:</legend>
+            <input type="radio" id="software_engineer" name="user_job" value="Software Engineer">
+            <label for="software_engineer">Software Engineer</label><br>
+            <input type="radio" id="qa_engineer" name="user_job" value="QA Engineer">
+            <label for="qa_engineer">QA Engineer</label><br>
+            <input type="radio" id="product_engineer" name="user_job" value="Product Manager">
+            <label for="product_manager">Product Manager</label> <br>
+        </fieldset><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
